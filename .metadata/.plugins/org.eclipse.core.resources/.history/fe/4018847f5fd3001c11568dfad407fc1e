@@ -1,0 +1,46 @@
+package src.test.java;
+
+import java.io.IOException;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.openqa.selenium.WebElement;
+import org.pom.BookHotelPage;
+import org.pom.BookingConfirmPage;
+import org.pom.CancelBookingpage;
+import org.pom.LoginPage;
+import org.pom.SearchHotelpage;
+import org.pom.SelectHotelPage;
+
+public class JunitIntegration extends BaseClass{
+	           @BeforeClass    
+                  public static void beforeClass() {
+                	 getDriver();
+                	 enterUrl("https://adactinhotelapp.com/");
+                	 Maximum();
+                
+				}  @AfterClass
+                  public static void afterClass() {
+				}
+
+				@Test
+                  public void test() throws IOException {
+                	 
+				}
+				
+				@Before
+                  public void before() {
+                 long currentTimeMillis = System.currentTimeMillis();
+                 System.out.println(currentTimeMillis);
+				}
+				@After
+                  public void after() {
+                 long currentTimeMillis = System.currentTimeMillis();
+                 System.out.println(currentTimeMillis);
+				}
+				
+}

@@ -1,0 +1,41 @@
+package src.test.java;
+
+import java.io.IOException;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.openqa.selenium.WebElement;
+import org.pom.LoginPage;
+
+public class JunitIntegration extends BaseClass{
+	           @BeforeClass    
+                  public static void beforeClass() {
+                	 getDriver();
+                	 enterUrl("https://adactinhotelapp.com/");
+                	 Maximum();
+                
+				}  @AfterClass
+                  public static void afterClass() {
+					quit();
+
+				}@Test
+                  public void test() throws IOException {
+                	 LoginPage loginpage=new LoginPage();
+                	 String userName = getvalueFromExcel("Sheet1", 1, 0);
+                	 String password = getvalueFromExcel("Sheet1", 1, 1);
+                	 loginpage.logins(userName, password);
+                	 
+				}@Before
+                  public void before() {
+                 long currentTimeMillis = System.currentTimeMillis();
+                 System.out.println(currentTimeMillis);
+				}@After
+                  public void after() {
+                 long currentTimeMillis = System.currentTimeMillis();
+                 System.out.println(currentTimeMillis);
+				}
+}

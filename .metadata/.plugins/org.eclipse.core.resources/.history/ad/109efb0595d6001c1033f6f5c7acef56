@@ -1,0 +1,6 @@
+Feature: Verify the Adactin page Details
+Scenario: Verifying Adactin login with valid credentials
+Given User is on the Adactin Hotel Page
+When User should enter username and Password
+And user should click login button 
+Then User should verify succsess message

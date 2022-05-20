@@ -1,0 +1,18 @@
+package org.pom;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+import src.test.java.BaseClass;
+
+public class BookingConfirmPage extends BaseClass {
+        @FindBy(id="order_no")
+        private WebElement orderNum;
+
+		public WebElement getOrderNum() {
+			return orderNum;
+		}
+        public void bookingconfirm(String orderNumber) {
+         getAttribute(getOrderNum(), orderNumber);
+		}
+}

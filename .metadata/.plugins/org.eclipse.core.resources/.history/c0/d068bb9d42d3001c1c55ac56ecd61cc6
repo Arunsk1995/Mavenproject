@@ -1,0 +1,24 @@
+package org.pom;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+import src.test.java.BaseClass;
+
+public class SelectHotelPage extends BaseClass {
+  @FindBy(id="radiobutton_0")
+  private WebElement btnRadio;
+  @FindBy(id="continue")
+  private WebElement btnContinue;
+public WebElement getBtnRadio() {
+	return btnRadio;
+}
+public WebElement getBtnContinue() {
+	return btnContinue;
+}
+  
+  private void selectHotel() {
+  click(getBtnRadio());
+  click(getBtnContinue());
+}
+}

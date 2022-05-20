@@ -1,0 +1,33 @@
+package org.pom;
+
+import java.io.IOException;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import src.test.java.BaseClass;
+
+public class BookingConfirmPage extends BaseClass {
+	public BookingConfirmPage() {
+		 PageFactory.initElements(driver, this);
+	}
+        @FindBy(id="order_no")
+        private WebElement orderNum;
+        @FindBy(xpath="//a[text()='Booked Itinerary']")
+        private WebElement txtBookingCancel;
+
+		public WebElement getTxtBookingCancel() {
+			return txtBookingCancel;
+		}
+		public WebElement getOrderNum() {
+			return orderNum;
+		}
+        public void bookingconfirm(String orderNumber) throws IOException {
+          String attribute = getAttribute(getOrderNum(), orderNumber);
+          writeData("Sheet1", 1, 19, attribute);
+         
+         
+         click(getTxtBookingCancel());
+		}
+}
